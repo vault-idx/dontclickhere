@@ -1,0 +1,204 @@
+/* ---------------------------------------------------------
+   GENERAL PAGE STYLE
+----------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Share Tech Mono', monospace;
+    color: #fff;
+    position: relative;
+}
+
+/* ---------------------------------------------------------
+   TYPEWRITER TEXT
+----------------------------------------------------------*/
+.typewriter {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    width: 80%;
+    margin: 120px auto 0 auto;
+    text-align: center;
+    min-height: 80px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* ---------------------------------------------------------
+   BUTTON AREA
+----------------------------------------------------------*/
+.button-area {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+    opacity: 0;
+    transition: opacity 1.3s ease;
+}
+
+.button-area.show {
+    opacity: 1;
+}
+
+.button-area button {
+    padding: 15px 35px;
+    margin: 0 25px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    background: #111;
+    color: #fff;
+    transition: 0.25s;
+    letter-spacing: 1px;
+}
+
+#redBtn {
+    border: 2px solid #dd0000;
+}
+
+#greenBtn {
+    border: 2px solid #00cc55;
+}
+
+/* Red button glowing when green is hovered */
+.glowRed {
+    box-shadow: 0 0 25px 8px red !important;
+}
+
+/* ---------------------------------------------------------
+   EMERGENCY FLASH
+----------------------------------------------------------*/
+#emergencyFlash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 0, 0, 0.25);
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Emergency flash animation */
+.flashAnimate {
+    animation: flash 0.18s infinite;
+}
+
+@keyframes flash {
+    0% { opacity: 0; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0; }
+}
+
+/* ---------------------------------------------------------
+   MIST (CANVAS)
+----------------------------------------------------------*/
+#mistCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+/* Mist rising animation (when enabled) */
+.riseMist {
+    animation: mistRise 6s linear forwards;
+}
+
+@keyframes mistRise {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------
+   FINAL REVEAL CONTENT
+----------------------------------------------------------*/
+#finalReveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#finalReveal.show {
+    opacity: 1;
+}
+
+/* QR code */
+#qrImage {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 30px;
+}
+
+/* Glowing note */
+#glowNote {
+    font-size: 1.05rem;
+    width: 70%;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 25px;
+    opacity: 0;
+    animation: glowFade 3.6s infinite;
+}
+
+@keyframes glowFade {
+    0% { opacity: 0; text-shadow: none; }
+    40% { opacity: 1; text-shadow: 0 0 12px #ffffffa0; }
+    100% { opacity: 0; text-shadow: none; }
+}
+
+/* Password box */
+.passwordBox {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+#copyPass {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #777;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#copyPass:hover {
+    background: #555;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+----------------------------------------------------------*/
+@media (max-width: 600px) {
+    .typewriter {
+        font-size: 1.2rem;
+    }
+    #qrImage {
+        width: 180px;
+        height: 180px;
+    }
+    #glowNote {
+        font-size: 0.9rem;
+    }
+}

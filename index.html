@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Darkness</title>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Horror Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" src="" autoplay loop></audio>
+
+    <!-- Typewriter keyboard click sound -->
+    <audio id="typeSound" src=""></audio>
+
+    <!-- Emergency Alarm -->
+    <audio id="alarmSound" src=""></audio>
+
+    <!-- First text container -->
+    <div id="firstText" class="typewriter"></div>
+
+    <!-- Second text container -->
+    <div id="secondText" class="typewriter"></div>
+
+    <!-- Buttons -->
+    <div class="button-area">
+        <button id="redBtn">YES</button>
+        <button id="greenBtn">NO</button>
+    </div>
+
+    <!-- Emergency red flash layer -->
+    <div id="emergencyFlash"></div>
+
+    <!-- Mist layer (canvas used for scratch) -->
+    <canvas id="mistCanvas"></canvas>
+
+    <!-- Hidden final content (revealed after scratching) -->
+    <div id="finalReveal">
+
+        <img id="qrImage" src="" alt="QR Code">
+
+        <div id="glowNote"></div>
+
+        <div class="passwordBox">
+            <span id="passwordText"></span>
+            <button id="copyPass">Copy</button>
+        </div>
+    </div>
+
+    <!-- JS Link -->
+    <script src="script.js"></script>
+</body>
+</html>
